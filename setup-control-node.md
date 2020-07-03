@@ -1,5 +1,10 @@
 # setup control node
 
+
+## Prepare installation
+Download `Ubuntu Server 20.04 LTS` from `https://ubuntu.com/download/server` and start the installation
+
+
 ## Choose Language
 Select `English`
 
