@@ -45,15 +45,18 @@ Login using user `root` and the password specified before.
 ![](./images/setup-proxmox/10.png)
 
 
+### Accept SSH fingerprint
+SSH into control node `ssh root@192.168.40.192 exit`, enter your password and type `yes` to accept the fingerprint.
+
+![](./images/setup-proxmox/11.png)
 
 
+### Run ansible playbook
+Now you can start the ansible playbook to configure proxmox.
 
+`ansible-playbook setup-proxmox.yml -u root -k`
 
-## Notes for virtualbox
-Follow this steps:
+Enter your password.
 
-`https://pve.proxmox.com/wiki/Proxmox_VE_inside_VirtualBox`.
-
-Enable nested virtualization on vm named `proxmox` using the command
-
-`VBoxManage modifyvm proxmox --nested-hw-virt on`
+<!-- TODO: add image -->
+![](./images/setup-proxmox/12.png)
