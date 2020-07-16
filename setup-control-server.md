@@ -107,3 +107,11 @@ Now you can start the ansible playbook to configure the control node.
 Enter your password.
 
 ![](./images/setup-control-server/14.png)
+
+
+## Generate new cloud-init password
+To generate a new cloud-init password you can use the following command.
+
+```shell
+python3 -c 'import crypt; print(crypt.crypt("123456"))'
+```
