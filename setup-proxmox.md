@@ -36,7 +36,7 @@ Remember the ip address and port. Reboot the system.
 
 ![](./images/setup-proxmox/8.png)
 
-Connect to the shown address `https://192.168.40.192:8006/` and accept the self signed certificate.
+Connect to the shown address `https://192.168.40.190:8006/` and accept the self signed certificate.
 
 ![](./images/setup-proxmox/9.png)
 
@@ -46,7 +46,7 @@ Login using user `root` and the password specified before.
 
 
 ### Accept SSH fingerprint
-SSH into control node `ssh root@192.168.40.192 exit`, enter your password and type `yes` to accept the fingerprint.
+SSH into control node `ssh root@192.168.40.190 exit`, enter your password and type `yes` to accept the fingerprint.
 
 ![](./images/setup-proxmox/11.png)
 
@@ -58,5 +58,4 @@ Now you can start the ansible playbook to configure proxmox.
 
 Enter your password.
 
-<!-- TODO: add image -->
 ![](./images/setup-proxmox/12.png)
