@@ -1,5 +1,4 @@
-clustarr docs
-----
+# docs for clustarr
 
 ## Installation
 

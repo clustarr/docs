@@ -93,20 +93,12 @@ Select `Reboot`
 ![](./images/setup-control-server/12.png)
 
 
-### Accept SSH fingerprint
-SSH into control node `ssh ansible@192.168.40.180 exit`, enter your password and type `yes` to accept the fingerprint.
-
-![](./images/setup-control-server/13.png)
-
-
 ### Run ansible playbook
 Now you can start the ansible playbook to configure the control node.
 
-`ansible-playbook setup-controlserver.yml -u ansible -k -K`
+`ansible-playbook setup-controlserver.yml -k -K`
 
 Enter your password.
-
-![](./images/setup-control-server/14.png)
 
 
 ## Generate new cloud-init password

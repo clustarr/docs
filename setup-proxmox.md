@@ -45,17 +45,9 @@ Login using user `root` and the password specified before.
 ![](./images/setup-proxmox/10.png)
 
 
-### Accept SSH fingerprint
-SSH into control node `ssh root@192.168.40.190 exit`, enter your password and type `yes` to accept the fingerprint.
-
-![](./images/setup-proxmox/11.png)
-
-
 ### Run ansible playbook
 Now you can start the ansible playbook to configure proxmox.
 
-`ansible-playbook setup-proxmox.yml -u root -k`
+`ansible-playbook setup-proxmox.yml -k`
 
 Enter your password.
-
-![](./images/setup-proxmox/12.png)
