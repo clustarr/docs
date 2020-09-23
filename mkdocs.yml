@@ -1,0 +1,10 @@
+site_name: clustarr-docs
+
+nav:
+  - Getting Started: index.md
+  - Install: install.md
+  - Setup Controlserver: setup-controlserver.md
+  - Setup Proxmox VE: setup-proxmox.md
+
+theme:
+   name: 'material'
