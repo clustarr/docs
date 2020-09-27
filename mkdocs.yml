@@ -1,10 +1,14 @@
-site_name: clustarr-docs
+site_name: clustarr
 
 nav:
-  - Getting Started: index.md
-  - Install: install.md
+  - Getting started: index.md
+  - How does it work?: how-does-it-work.md
+  - Setup local machine: setup-local-machine.md
+  - Ansible configuration: ansible-configuration.md
   - Setup Controlserver: setup-controlserver.md
   - Setup Proxmox VE: setup-proxmox.md
+  - Webinterface: webinterface.md
+  - Development setup: development-setup.md
 
 theme:
    name: 'material'
