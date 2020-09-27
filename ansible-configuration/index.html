@@ -1,0 +1,799 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.13">
+    
+    
+      
+        <title>Ansible configuration - clustarr</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.077507d7.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ansible-configuration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="clustarr" class="md-header-nav__button md-logo" aria-label="clustarr">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            clustarr
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Ansible configuration
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="clustarr" class="md-nav__button md-logo" aria-label="clustarr">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    clustarr
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../how-does-it-work/" title="How does it work?" class="md-nav__link">
+      How does it work?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../setup-local-machine/" title="Setup local machine" class="md-nav__link">
+      Setup local machine
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Ansible configuration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Ansible configuration" class="md-nav__link md-nav__link--active">
+      Ansible configuration
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#controlserver" class="md-nav__link">
+    Controlserver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxmox-ve" class="md-nav__link">
+    Proxmox VE
+  </a>
+  
+    <nav class="md-nav" aria-label="Proxmox VE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host-and-password" class="md-nav__link">
+    Host and password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-credentials" class="md-nav__link">
+    API credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vm-hardware" class="md-nav__link">
+    VM hardware
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-passwords" class="md-nav__link">
+    Node passwords
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-software" class="md-nav__link">
+    Update software
+  </a>
+  
+    <nav class="md-nav" aria-label="Update software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox" class="md-nav__link">
+    Proxmox
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubectl" class="md-nav__link">
+    kubectl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-server" class="md-nav__link">
+    Ubuntu Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rke" class="md-nav__link">
+    RKE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    Docker Compose
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../setup-controlserver/" title="Setup Controlserver" class="md-nav__link">
+      Setup Controlserver
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../setup-proxmox/" title="Setup Proxmox VE" class="md-nav__link">
+      Setup Proxmox VE
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../webinterface/" title="Webinterface" class="md-nav__link">
+      Webinterface
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../development-setup/" title="Development setup" class="md-nav__link">
+      Development setup
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#controlserver" class="md-nav__link">
+    Controlserver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxmox-ve" class="md-nav__link">
+    Proxmox VE
+  </a>
+  
+    <nav class="md-nav" aria-label="Proxmox VE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host-and-password" class="md-nav__link">
+    Host and password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-credentials" class="md-nav__link">
+    API credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vm-hardware" class="md-nav__link">
+    VM hardware
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-passwords" class="md-nav__link">
+    Node passwords
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-software" class="md-nav__link">
+    Update software
+  </a>
+  
+    <nav class="md-nav" aria-label="Update software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox" class="md-nav__link">
+    Proxmox
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubectl" class="md-nav__link">
+    kubectl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-server" class="md-nav__link">
+    Ubuntu Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rke" class="md-nav__link">
+    RKE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    Docker Compose
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="ansible-configuration">Ansible configuration</h1>
+<p>Some of the default ansible configuration settings must be adjusted to your network. This includes the
+<a href="#controlserver">controlserver IP address</a> and the <a href="#proxmox">Proxmox VE server IP address</a>. The other settings can be
+kept if the instructions have been followed exactly as described before.</p>
+<p>The files described here are located relatively to the cloned ansible repository.</p>
+<h2 id="controlserver">Controlserver</h2>
+<p>The controlserver host and password can be adjusted in the <code>inventory/hosts.ini</code> file.</p>
+<p>The IP address or hostname of the controlserver can be specified inside the <code>[controlserver]</code> section.
+If your controlserver has the IP address <code>192.168.40.180</code> then the entry looks like this:</p>
+<pre><code>[controlserver]
+192.168.40.180
+</code></pre>
+<p>The SSH password <code>ansible_ssh_pass</code> and the sudo password <code>ansible_become_password</code> can be specified inside the
+<code>[controlserver:vars]</code> section.
+If your password is set to <code>123456</code> then the entry looks like this:</p>
+<pre><code>[controlserver:vars]
+ansible_ssh_pass=123456
+ansible_become_password=123456
+</code></pre>
+<h2 id="proxmox-ve">Proxmox VE</h2>
+<h3 id="host-and-password">Host and password</h3>
+<p>The Proxmox VE server host and password can be adjusted in the <code>inventory/hosts.ini</code> file.</p>
+<p>The IP address or hostname of the Proxmox VE server can be specified inside the <code>[proxmox]</code> section.
+If your Proxmox VE server has the IP address <code>192.168.40.190</code> then the entry looks like this:</p>
+<pre><code>[proxmox]
+192.168.40.190
+</code></pre>
+<p>The SSH password <code>ansible_ssh_pass</code> can be specified inside the <code>[controlserver:vars]</code> section.
+If your password is set to <code>123456</code> then the entry looks like this:</p>
+<pre><code>[proxmox:vars]
+ansible_ssh_pass=123456
+</code></pre>
+<h3 id="api-credentials">API credentials</h3>
+<p>The credentials for the API access can be adjusted in the <code>group_vars/all</code> file.</p>
+<p>The following parameters are required.</p>
+<ul>
+<li>
+<p><code>proxmox_api_user</code>:
+Specifies the user for the API authentication.
+This value is visible in the Proxmox VE webinterface in the top right corner.
+More info <a href="https://docs.ansible.com/ansible/latest/collections/community/general/proxmox_kvm_module.html#parameter-api_user">here</a>.</p>
+</li>
+<li>
+<p><code>proxmox_api_pass</code>:
+Specifies the password for the API authentication.
+This is the same password as the password for the Proxmox VE webinterface.
+More info <a href="https://docs.ansible.com/ansible/latest/collections/community/general/proxmox_kvm_module.html#parameter-api_password">here</a>.</p>
+</li>
+<li>
+<p><code>proxmox_api_node</code>:
+Specifies the Proxmox VE node, where the new VM will be created.
+This value is visible in the Proxmox VE webinterface inside the datacenter overview.
+More info <a href="https://docs.ansible.com/ansible/latest/collections/community/general/proxmox_kvm_module.html#parameter-node">here</a>.</p>
+</li>
+</ul>
+<p>The default entry looks like this:</p>
+<pre><code>proxmox_api_user: root@pam
+proxmox_api_pass: "123456"
+proxmox_api_node: pve
+</code></pre>
+<h3 id="vm-hardware">VM hardware</h3>
+<p>The settings that define the hardware of the VM can be adjusted in the <code>group_vars/all</code> file.</p>
+<p>The following parameters can be adjusted.</p>
+<ul>
+<li>
+<p><code>proxmox_vm_storage</code>:
+Specifies the storage identifier where to create the virtio hard disk.
+More info <a href="https://docs.ansible.com/ansible/latest/collections/community/general/proxmox_kvm_module.html#parameter-virtio">here</a>.</p>
+</li>
+<li>
+<p><code>proxmox_vm_storage_capacity</code>:
+Specifies the size of the virtio hard disk in GB.
+More info <a href="https://docs.ansible.com/ansible/latest/collections/community/general/proxmox_kvm_module.html#parameter-virtio">here</a>.</p>
+</li>
+<li>
+<p><code>proxmox_vm_sockets</code>:
+Specifies the number of CPU sockets.
+More info <a href="https://docs.ansible.com/ansible/latest/collections/community/general/proxmox_kvm_module.html#parameter-sockets">here</a>.</p>
+</li>
+<li>
+<p><code>proxmox_vm_cores</code>:
+Specifies the number of CPU cores per socket.
+More info <a href="https://docs.ansible.com/ansible/latest/collections/community/general/proxmox_kvm_module.html#parameter-cores">here</a>.</p>
+</li>
+<li>
+<p><code>proxmox_vm_memory</code>:
+Specifies the memory size in MB.
+More info <a href="https://docs.ansible.com/ansible/latest/collections/community/general/proxmox_kvm_module.html#parameter-memory">here</a>.</p>
+</li>
+</ul>
+<p>This example entry specifies VMs with a 40GB hard disk, 1 socket, 4 cores and 3GB memory:</p>
+<pre><code>proxmox_vm_storage: local-lvm
+proxmox_vm_storage_capacity: 40
+proxmox_vm_sockets: 1
+proxmox_vm_cores: 4
+proxmox_vm_memory: 3072
+</code></pre>
+<h2 id="node-passwords">Node passwords</h2>
+<p>The hashed password for a new node is specified in the file <code>/roles/pxe/templates/cloud-init/user-data.yml.j2</code> within 
+<code>autoinstall.identity.password</code>. To set a new password you have to replace the default value with the hash of your new
+password.</p>
+<p>To generate the hash for the password <code>123456</code> use the following command.</p>
+<pre><code>python3 -c 'import crypt; print(crypt.crypt("123456"))'
+</code></pre>
+<p>Replace <code>123456</code> with your desired password.</p>
+<h2 id="update-software">Update software</h2>
+<p>The versions, urls and checksums for the software that will be downloaded while installing the controlserver can be
+adjusted in the <code>group_vars/all</code> file.</p>
+<h3 id="proxmox">Proxmox</h3>
+<p>If you install a Proxmox VE version that is not based on debian buster or the package repository url has changed for
+any other reason, you have to adjust the following values.</p>
+<ul>
+<li>
+<p><code>proxmox_enterprise_repository</code>:
+Specifies the package for the enterprise repository.</p>
+</li>
+<li>
+<p><code>proxmox_no_subscription_repository</code>:
+Specifies the package for the no-subscription repository.</p>
+</li>
+</ul>
+<p>The entry for Proxmox VE 6.2 looks like this:</p>
+<pre><code>proxmox_enterprise_repository: "deb https://enterprise.proxmox.com/debian/pve buster pve-enterprise"
+proxmox_no_subscription_repository: "deb http://download.proxmox.com/debian/pve buster pve-no-subscription"
+</code></pre>
+<h3 id="kubectl">kubectl</h3>
+<p>This section describes how to specify the kubectl release that is installed on the controlserver.</p>
+<ul>
+<li>
+<p><code>kubectl_version</code>:
+Specifies the kubectl version. It can be requested
+<a href="https://storage.googleapis.com/kubernetes-release/release/stable.txt">here</a>.</p>
+</li>
+<li>
+<p><code>kubectl_url</code>:
+Specifies the url to the kubectl release. The version is inserted into the url automatically.</p>
+</li>
+<li>
+<p><code>kubectl_checksum</code>:
+Specifies the checksum type and value of the kubectl release and can be requested from the url
+<code>https://storage.googleapis.com/kubernetes-release/release/{{ kubectl_version }}/bin/linux/amd64/kubectl.sha256</code> where
+<code>{{ kubectl_version }}</code> has to be replaced by the kubectl version (for example
+<a href="https://storage.googleapis.com/kubernetes-release/release/v1.18.6/bin/linux/amd64/kubectl.sha256">v1.18.6</a>).</p>
+</li>
+</ul>
+<p>An example entry looks like this:</p>
+<pre><code>kubectl_version: v1.18.6
+kubectl_url: "https://storage.googleapis.com/kubernetes-release/release/{{ kubectl_version }}/bin/linux/amd64/kubectl"
+kubectl_checksum: sha256:62fcb9922164725c7cba5747562f2ad2f4d834ad0a458c1e4c794cc203dcdfb3
+</code></pre>
+<h3 id="ubuntu-server">Ubuntu Server</h3>
+<p>This section describes how to specify the Ubuntu Server release that is installed on new hosts.</p>
+<ul>
+<li>
+<p><code>ubuntu_server_url</code>:
+Specifies the url to the Ubuntu Server release. It can be requested <a href="http://releases.ubuntu.com/20.04/">here</a>.</p>
+</li>
+<li>
+<p><code>ubuntu_server_checksum</code>:
+Specifies checksum type and value of the Ubuntu Server release and can be requested
+<a href="https://releases.ubuntu.com/20.04/SHA256SUMS">here</a>.</p>
+</li>
+</ul>
+<p>An example entry looks like this:</p>
+<pre><code>ubuntu_server_url: http://releases.ubuntu.com/20.04/ubuntu-20.04.1-live-server-amd64.iso
+ubuntu_server_checksum: sha256:443511f6bf12402c12503733059269a2e10dec602916c0a75263e5d990f6bb93
+</code></pre>
+<h3 id="rke">RKE</h3>
+<p>This section describes how to specify the RKE release that is installed on the controlserver.</p>
+<ul>
+<li>
+<p><code>rke_version</code>:
+Specifies the RKE version. It can be requested <a href="https://github.com/rancher/rke/releases">here</a>.</p>
+</li>
+<li>
+<p><code>rke_url</code>:
+Specifies the url to the RKE release. The version is inserted into the url automatically.</p>
+</li>
+<li>
+<p><code>rke_checksum</code>:
+Specifies checksum type and value of the RKE release and can be requested
+<a href="https://github.com/rancher/rke/releases">here</a>.</p>
+</li>
+</ul>
+<p>An example entry looks like this:</p>
+<pre><code>rke_version: v1.1.4
+rke_url: "https://github.com/rancher/rke/releases/download/{{ rke_version }}/rke_linux-amd64"
+rke_checksum: sha256:1c7bb6e7eb3c820475b3ecbc4fc5786a912658b9d0e1f4323759c1bb72d6a758
+</code></pre>
+<h3 id="docker-compose">Docker Compose</h3>
+<p>This section describes how to specify the Docker Compose release that is installed on the controlserver.</p>
+<ul>
+<li>
+<p><code>docker_compose_version</code>:
+Specifies the Docker Compose version. It can be requested <a href="https://github.com/docker/compose/releases">here</a>.</p>
+</li>
+<li>
+<p><code>docker_compose_url</code>:
+Specifies the url to the Docker Compose release. The version is inserted into the url automatically.</p>
+</li>
+<li>
+<p><code>docker_compose_checksum</code>:
+Specifies checksum type and value of the Docker Compose release and can be requested
+<a href="https://github.com/docker/compose/releases">here</a>.</p>
+</li>
+</ul>
+<p>An example entry looks like this:</p>
+<pre><code>docker_compose_version: 1.26.2
+docker_compose_url: "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-Linux-x86_64"
+docker_compose_checksum: sha256:13e50875393decdb047993c3c0192b0a3825613e6dfc0fa271efed4f5dbdd6eb
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../setup-local-machine/" title="Setup local machine" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Setup local machine
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../setup-controlserver/" title="Setup Controlserver" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Setup Controlserver
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
