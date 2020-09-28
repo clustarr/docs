@@ -142,13 +142,13 @@ Specifies the url to the kubectl release. The version is inserted into the url a
 Specifies the checksum type and value of the kubectl release and can be requested from the url
 `https://storage.googleapis.com/kubernetes-release/release/{{ kubectl_version }}/bin/linux/amd64/kubectl.sha256` where
 `{{ kubectl_version }}` has to be replaced by the kubectl version (for example
-[v1.18.6](https://storage.googleapis.com/kubernetes-release/release/v1.18.6/bin/linux/amd64/kubectl.sha256)).
+[v1.19.2](https://storage.googleapis.com/kubernetes-release/release/v1.19.2/bin/linux/amd64/kubectl.sha256)).
 
 An example entry looks like this:
 
-    kubectl_version: v1.18.6
+    kubectl_version: v1.19.2
     kubectl_url: "https://storage.googleapis.com/kubernetes-release/release/{{ kubectl_version }}/bin/linux/amd64/kubectl"
-    kubectl_checksum: sha256:62fcb9922164725c7cba5747562f2ad2f4d834ad0a458c1e4c794cc203dcdfb3
+    kubectl_checksum: sha256:f51adfe7968ee173dbfb3dabfc10dc774983cbf8a3a7c1c75a1423b91fda6821
 
 ### Ubuntu Server
 This section describes how to specify the Ubuntu Server release that is installed on new hosts.
@@ -169,36 +169,19 @@ An example entry looks like this:
 This section describes how to specify the RKE release that is installed on the controlserver.
 
 - `rke_version`:
-Specifies the RKE version. It can be requested [here](https://github.com/rancher/rke/releases).
+Specifies the RKE version. It can be requested [here](https://github.com/rancher/rke/releases/latest).
 
 - `rke_url`:
 Specifies the url to the RKE release. The version is inserted into the url automatically.
 
 - `rke_checksum`:
-Specifies checksum type and value of the RKE release and can be requested
-[here](https://github.com/rancher/rke/releases).
+Specifies the checksum type and value of the RKE release and can be requested from the url
+`https://github.com/rancher/rke/releases/download/{{ rke_version }}/sha256sum.txt` where
+`{{ rke_version }}` has to be replaced by the RKE version (for example
+[v1.1.7](https://github.com/rancher/rke/releases/download/v1.1.7/sha256sum.txt)).
 
 An example entry looks like this:
 
-    rke_version: v1.1.4
+    rke_version: v1.1.7
     rke_url: "https://github.com/rancher/rke/releases/download/{{ rke_version }}/rke_linux-amd64"
-    rke_checksum: sha256:1c7bb6e7eb3c820475b3ecbc4fc5786a912658b9d0e1f4323759c1bb72d6a758
-
-### Docker Compose
-This section describes how to specify the Docker Compose release that is installed on the controlserver.
-
-- `docker_compose_version`:
-Specifies the Docker Compose version. It can be requested [here](https://github.com/docker/compose/releases).
-
-- `docker_compose_url`:
-Specifies the url to the Docker Compose release. The version is inserted into the url automatically.
-
-- `docker_compose_checksum`:
-Specifies checksum type and value of the Docker Compose release and can be requested
-[here](https://github.com/docker/compose/releases).
-
-An example entry looks like this:
-
-    docker_compose_version: 1.26.2
-    docker_compose_url: "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-Linux-x86_64"
-    docker_compose_checksum: sha256:13e50875393decdb047993c3c0192b0a3825613e6dfc0fa271efed4f5dbdd6eb
+    rke_checksum: sha256:ebc62233f213762ef9686ac9029638f646269d17843ed7b0e4dbd9df5921b855
