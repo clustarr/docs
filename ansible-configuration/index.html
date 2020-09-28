@@ -302,13 +302,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#docker-compose" class="md-nav__link">
-    Docker Compose
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -476,13 +469,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#docker-compose" class="md-nav__link">
-    Docker Compose
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -646,13 +632,13 @@ Specifies the url to the kubectl release. The version is inserted into the url a
 Specifies the checksum type and value of the kubectl release and can be requested from the url
 <code>https://storage.googleapis.com/kubernetes-release/release/{{ kubectl_version }}/bin/linux/amd64/kubectl.sha256</code> where
 <code>{{ kubectl_version }}</code> has to be replaced by the kubectl version (for example
-<a href="https://storage.googleapis.com/kubernetes-release/release/v1.18.6/bin/linux/amd64/kubectl.sha256">v1.18.6</a>).</p>
+<a href="https://storage.googleapis.com/kubernetes-release/release/v1.19.2/bin/linux/amd64/kubectl.sha256">v1.19.2</a>).</p>
 </li>
 </ul>
 <p>An example entry looks like this:</p>
-<pre><code>kubectl_version: v1.18.6
+<pre><code>kubectl_version: v1.19.2
 kubectl_url: "https://storage.googleapis.com/kubernetes-release/release/{{ kubectl_version }}/bin/linux/amd64/kubectl"
-kubectl_checksum: sha256:62fcb9922164725c7cba5747562f2ad2f4d834ad0a458c1e4c794cc203dcdfb3
+kubectl_checksum: sha256:f51adfe7968ee173dbfb3dabfc10dc774983cbf8a3a7c1c75a1423b91fda6821
 </code></pre>
 <h3 id="ubuntu-server">Ubuntu Server</h3>
 <p>This section describes how to specify the Ubuntu Server release that is installed on new hosts.</p>
@@ -676,7 +662,7 @@ ubuntu_server_checksum: sha256:443511f6bf12402c12503733059269a2e10dec602916c0a75
 <ul>
 <li>
 <p><code>rke_version</code>:
-Specifies the RKE version. It can be requested <a href="https://github.com/rancher/rke/releases">here</a>.</p>
+Specifies the RKE version. It can be requested <a href="https://github.com/rancher/rke/releases/latest">here</a>.</p>
 </li>
 <li>
 <p><code>rke_url</code>:
@@ -684,36 +670,16 @@ Specifies the url to the RKE release. The version is inserted into the url autom
 </li>
 <li>
 <p><code>rke_checksum</code>:
-Specifies checksum type and value of the RKE release and can be requested
-<a href="https://github.com/rancher/rke/releases">here</a>.</p>
+Specifies the checksum type and value of the RKE release and can be requested from the url
+<code>https://github.com/rancher/rke/releases/download/{{ rke_version }}/sha256sum.txt</code> where
+<code>{{ rke_version }}</code> has to be replaced by the RKE version (for example
+<a href="https://github.com/rancher/rke/releases/download/v1.1.7/sha256sum.txt">v1.1.7</a>).</p>
 </li>
 </ul>
 <p>An example entry looks like this:</p>
-<pre><code>rke_version: v1.1.4
+<pre><code>rke_version: v1.1.7
 rke_url: "https://github.com/rancher/rke/releases/download/{{ rke_version }}/rke_linux-amd64"
-rke_checksum: sha256:1c7bb6e7eb3c820475b3ecbc4fc5786a912658b9d0e1f4323759c1bb72d6a758
-</code></pre>
-<h3 id="docker-compose">Docker Compose</h3>
-<p>This section describes how to specify the Docker Compose release that is installed on the controlserver.</p>
-<ul>
-<li>
-<p><code>docker_compose_version</code>:
-Specifies the Docker Compose version. It can be requested <a href="https://github.com/docker/compose/releases">here</a>.</p>
-</li>
-<li>
-<p><code>docker_compose_url</code>:
-Specifies the url to the Docker Compose release. The version is inserted into the url automatically.</p>
-</li>
-<li>
-<p><code>docker_compose_checksum</code>:
-Specifies checksum type and value of the Docker Compose release and can be requested
-<a href="https://github.com/docker/compose/releases">here</a>.</p>
-</li>
-</ul>
-<p>An example entry looks like this:</p>
-<pre><code>docker_compose_version: 1.26.2
-docker_compose_url: "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-Linux-x86_64"
-docker_compose_checksum: sha256:13e50875393decdb047993c3c0192b0a3825613e6dfc0fa271efed4f5dbdd6eb
+rke_checksum: sha256:ebc62233f213762ef9686ac9029638f646269d17843ed7b0e4dbd9df5921b855
 </code></pre>
                 
               
