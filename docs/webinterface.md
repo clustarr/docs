@@ -1,7 +1,7 @@
 # Webinterface
 
 ## Overview
-The webinterface is available at the url `http://<control-server-ip>/` after the controlserver is installed.
+The webinterface is available at the URL `http://<control-server-ip>/` after the controlserver is installed.
 
 ![](./assets/images/frontend/clean.png)
 
@@ -43,14 +43,14 @@ The recently executed `Setup Proxmox` task is currently running which is display
 
 ![](./assets/images/frontend/setup-proxmox-task-finished.png)
 
-Once the task is completed or failed, the circular progress indicator disappears and is replaced by an corresponding
+Once the task is completed or failed, the circular progress indicator disappears and is replaced by a corresponding
 icon.
 
 ### Task output
 
 ![](./assets/images/frontend/setup-proxmox-task-output.png)
 
-The entire task output is displayed within a popup dialog that is opened on a click of the task element.
+The entire task output is displayed within a popup dialog that opens on a click of the task element.
 
 ### Cancel Task
 ![](./assets/images/frontend/cancel-task-button.png)
@@ -70,7 +70,7 @@ side.
 ![](./assets/images/frontend/add-host-button.png)
 
 New hosts can be added using the floating plus button in the bottom right corner. These hosts are not automatically
-added to the kubernetes cluster so they can also be used for other applications.
+added to the kubernetes cluster, so they can also be used for other applications.
 
 ![](./assets/images/frontend/add-host-hostname-dialog.png)
 
@@ -96,10 +96,10 @@ To add a host to the kubernetes cluster click on the cloud icon inside the host 
 
 The opened popup dialog allows to change the behavior of the task.
 
-The host type of the node in the cluster can be selected here. A kubernetes cluster have to contain at least one master
-node that controls the worker nodes. The worker nodes executes the containers.
+The host type of the node in the cluster can be selected here. A kubernetes cluster has to contain at least one master
+node that controls the worker nodes. The worker nodes execute the containers.
 
-The second options allows to disable the automatically rke up execution within the task. If this option is disabled,
+The second options allow to disable the automatic rke up execution within the task. If this option is disabled,
 the [RKE up task](#rke-up) have to be executed manually afterwards to apply the changes.
 
 ### Delete host

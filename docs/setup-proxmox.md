@@ -13,10 +13,10 @@ Select `Install Proxmox VE`.
 
 Accept the end user license agreement.
 
-### Target harddisk
+### Target hard disk
 ![](./assets/images/setup-proxmox/3.png)
 
-Select the target harddisk.
+Select the target hard disk.
 
 ### Location and Timezone
 ![](./assets/images/setup-proxmox/4.png)
@@ -49,13 +49,13 @@ Confirm the summary to start the installation.
 ### Reboot
 ![](./assets/images/setup-proxmox/8.png)
 
-Remember the ip address and port. Reboot the system.
+Remember the IP address and port. Reboot the system.
 
 ## Access the webinterface (optional)
 ![](./assets/images/setup-proxmox/9.png)
 
-Connect to the shown address (here `https://192.168.40.190:8006/`) and accept the self signed certificate.
+Connect to `https://<ip-address>:8006/` (here `https://192.168.40.190:8006/`) and accept the self signed certificate.
 
 ![](./assets/images/setup-proxmox/10.png)
 
-Login using user `root` and the password specified before.
+Log in using the user `root` and the password specified before.

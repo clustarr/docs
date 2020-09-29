@@ -110,11 +110,11 @@ To generate the hash for the password `123456` use the following command.
 Replace `123456` with your desired password.
 
 ## Update software
-The versions, urls and checksums for the software that will be downloaded while installing the controlserver can be
+The versions, URLs and checksums for the software that will be downloaded while installing the controlserver can be
 adjusted in the `group_vars/all` file.
 
 ### Proxmox
-If you install a Proxmox VE version that is not based on debian buster or the package repository url has changed for
+If you install a Proxmox VE version that is not based on debian buster or the package repository URL has changed for
 any other reason, you have to adjust the following values.
 
 - `proxmox_enterprise_repository`:
@@ -136,10 +136,10 @@ Specifies the kubectl version. It can be requested
 [here](https://storage.googleapis.com/kubernetes-release/release/stable.txt).
 
 - `kubectl_url`:
-Specifies the url to the kubectl release. The version is inserted into the url automatically.
+Specifies the URL to the kubectl release. The version is inserted into the URL automatically.
 
 - `kubectl_checksum`:
-Specifies the checksum type and value of the kubectl release and can be requested from the url
+Specifies the checksum type and value of the kubectl release and can be requested from the URL
 `https://storage.googleapis.com/kubernetes-release/release/{{ kubectl_version }}/bin/linux/amd64/kubectl.sha256` where
 `{{ kubectl_version }}` has to be replaced by the kubectl version (for example
 [v1.19.2](https://storage.googleapis.com/kubernetes-release/release/v1.19.2/bin/linux/amd64/kubectl.sha256)).
@@ -154,10 +154,10 @@ An example entry looks like this:
 This section describes how to specify the Ubuntu Server release that is installed on new hosts.
 
 - `ubuntu_server_url`:
-Specifies the url to the Ubuntu Server release. It can be requested [here](http://releases.ubuntu.com/20.04/).
+Specifies the URL to the Ubuntu Server release. It can be requested [here](http://releases.ubuntu.com/20.04/).
 
 - `ubuntu_server_checksum`:
-Specifies checksum type and value of the Ubuntu Server release and can be requested
+Specifies the checksum type and value of the Ubuntu Server release and can be requested
 [here](https://releases.ubuntu.com/20.04/SHA256SUMS).
 
 An example entry looks like this:
@@ -172,10 +172,10 @@ This section describes how to specify the RKE release that is installed on the c
 Specifies the RKE version. It can be requested [here](https://github.com/rancher/rke/releases/latest).
 
 - `rke_url`:
-Specifies the url to the RKE release. The version is inserted into the url automatically.
+Specifies the URL to the RKE release. The version is inserted into the URL automatically.
 
 - `rke_checksum`:
-Specifies the checksum type and value of the RKE release and can be requested from the url
+Specifies the checksum type and value of the RKE release and can be requested from the URL
 `https://github.com/rancher/rke/releases/download/{{ rke_version }}/sha256sum.txt` where
 `{{ rke_version }}` has to be replaced by the RKE version (for example
 [v1.1.7](https://github.com/rancher/rke/releases/download/v1.1.7/sha256sum.txt)).

@@ -17,10 +17,10 @@ The controlserver and Proxmox VE server have to be in the same network subnet.
 repository where the ansible playbooks are located. [This guide](setup-local-machine.md) describes how to proceed.
 Some of the default settings must be adjusted before proceeding, more info [here](ansible-configuration.md).
 
-4. The user [executes the ansible playbook](setup-controlserver.md#execute-the-ansible-playbook) to setup the
+4. The user [executes the ansible playbook](setup-controlserver.md#execute-the-ansible-playbook) to set up the
 controlserver. The ansible playbook connects via SSH to the controlserver and configures it.
 
-5. The user opens the webinterface in his webbrowser and [starts the task](webinterface.md#setup-proxmox-ve) that
+5. The user opens the webinterface in his web browser and [starts the task](webinterface.md#setup-proxmox-ve) that
 configures the new Proxmox VE host.
 
 ## Add host
@@ -37,8 +37,8 @@ This section describes to add a previously created host to the kubernetes cluste
 
 ![](./assets/images/overview/add-host-to-cluster.png)
 
-The user decides to add a previously added host to the cluster. He uses
-[the corresponding button](webinterface.md#add-host-to-cluster) in the webinterface and selects if this host should be a
+The user decides to add a previously added host to the cluster. He uses the corresponding
+[button](webinterface.md#add-host-to-cluster) in the webinterface and selects if this host should be a
 master or worker node. An ansible playbook is executed, installs the dependencies on the selected host, generates
 an updated Rancher Kubernetes Engine (RKE) config on the controlserver and use RKE to apply cluster changes.
 
@@ -48,5 +48,5 @@ This section describes to delete a previously created host or cluster node.
 ![](./assets/images/overview/delete-host.png)
 
 The user decides to [delete a host](webinterface.md#delete-host) using the webinterface. The corresponding playbook
-stops and removes the selected Proxmox VM. If the host is a cluster node it generates an updated RKE config on the
+stops and removes the selected Proxmox VM. If the host is a cluster node, it generates an updated RKE config on the
 controlserver and uses RKE to apply cluster changes.
