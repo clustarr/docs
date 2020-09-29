@@ -387,11 +387,11 @@
 <p>Virtualbox always crashed when used to virtualize Proxmox VE and nested VMs were started.
 QEMU should be used instead as it has not caused any problems.</p>
 <h3 id="networking">Networking</h3>
-<p>QEMU requires a bridge as network interface. An macvtab network interfaces do not work because it blocks the host to
+<p>QEMU requires a bridge as network interface. A macvtab network interfaces do not work because it blocks the host to
 guest communication and DHCP communication inside the nested VM does not work.</p>
 <p>For example, <a href="https://askubuntu.com/a/831881">this guide</a> can be used to create a bridge network interface.</p>
 <h2 id="clear-dns-cache">Clear DNS cache</h2>
-<p>If you remove a host and add a new host with the same name then it also has the same hostname.
+<p>If you remove a host and add a new host with the same name, then it also has the same hostname.
 This can cause problems because your local DNS cache probably still has the old IP address assigned to the hostname.
 Either you create new hosts with different hostnames or you clear the DNS cache manually with the following command.</p>
 <pre><code>sudo systemd-resolve --flush-caches

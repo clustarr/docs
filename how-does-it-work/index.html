@@ -389,11 +389,11 @@ repository where the ansible playbooks are located. <a href="../setup-local-mach
 Some of the default settings must be adjusted before proceeding, more info <a href="../ansible-configuration/">here</a>.</p>
 </li>
 <li>
-<p>The user <a href="../setup-controlserver/#execute-the-ansible-playbook">executes the ansible playbook</a> to setup the
+<p>The user <a href="../setup-controlserver/#execute-the-ansible-playbook">executes the ansible playbook</a> to set up the
 controlserver. The ansible playbook connects via SSH to the controlserver and configures it.</p>
 </li>
 <li>
-<p>The user opens the webinterface in his webbrowser and <a href="../webinterface/#setup-proxmox-ve">starts the task</a> that
+<p>The user opens the webinterface in his web browser and <a href="../webinterface/#setup-proxmox-ve">starts the task</a> that
 configures the new Proxmox VE host.</p>
 </li>
 </ol>
@@ -406,15 +406,15 @@ controlserver and starts the VM. The PXE config allows the VM to automatically i
 <h2 id="add-host-to-cluster">Add host to cluster</h2>
 <p>This section describes to add a previously created host to the kubernetes cluster.</p>
 <p><img alt="" src="../assets/images/overview/add-host-to-cluster.png" /></p>
-<p>The user decides to add a previously added host to the cluster. He uses
-<a href="../webinterface/#add-host-to-cluster">the corresponding button</a> in the webinterface and selects if this host should be a
+<p>The user decides to add a previously added host to the cluster. He uses the corresponding
+<a href="../webinterface/#add-host-to-cluster">button</a> in the webinterface and selects if this host should be a
 master or worker node. An ansible playbook is executed, installs the dependencies on the selected host, generates
 an updated Rancher Kubernetes Engine (RKE) config on the controlserver and use RKE to apply cluster changes.</p>
 <h2 id="delete-host">Delete host</h2>
 <p>This section describes to delete a previously created host or cluster node. </p>
 <p><img alt="" src="../assets/images/overview/delete-host.png" /></p>
 <p>The user decides to <a href="../webinterface/#delete-host">delete a host</a> using the webinterface. The corresponding playbook
-stops and removes the selected Proxmox VM. If the host is a cluster node it generates an updated RKE config on the
+stops and removes the selected Proxmox VM. If the host is a cluster node, it generates an updated RKE config on the
 controlserver and uses RKE to apply cluster changes.</p>
                 
               

@@ -596,10 +596,10 @@ password.</p>
 </code></pre>
 <p>Replace <code>123456</code> with your desired password.</p>
 <h2 id="update-software">Update software</h2>
-<p>The versions, urls and checksums for the software that will be downloaded while installing the controlserver can be
+<p>The versions, URLs and checksums for the software that will be downloaded while installing the controlserver can be
 adjusted in the <code>group_vars/all</code> file.</p>
 <h3 id="proxmox">Proxmox</h3>
-<p>If you install a Proxmox VE version that is not based on debian buster or the package repository url has changed for
+<p>If you install a Proxmox VE version that is not based on debian buster or the package repository URL has changed for
 any other reason, you have to adjust the following values.</p>
 <ul>
 <li>
@@ -625,11 +625,11 @@ Specifies the kubectl version. It can be requested
 </li>
 <li>
 <p><code>kubectl_url</code>:
-Specifies the url to the kubectl release. The version is inserted into the url automatically.</p>
+Specifies the URL to the kubectl release. The version is inserted into the URL automatically.</p>
 </li>
 <li>
 <p><code>kubectl_checksum</code>:
-Specifies the checksum type and value of the kubectl release and can be requested from the url
+Specifies the checksum type and value of the kubectl release and can be requested from the URL
 <code>https://storage.googleapis.com/kubernetes-release/release/{{ kubectl_version }}/bin/linux/amd64/kubectl.sha256</code> where
 <code>{{ kubectl_version }}</code> has to be replaced by the kubectl version (for example
 <a href="https://storage.googleapis.com/kubernetes-release/release/v1.19.2/bin/linux/amd64/kubectl.sha256">v1.19.2</a>).</p>
@@ -645,11 +645,11 @@ kubectl_checksum: sha256:f51adfe7968ee173dbfb3dabfc10dc774983cbf8a3a7c1c75a1423b
 <ul>
 <li>
 <p><code>ubuntu_server_url</code>:
-Specifies the url to the Ubuntu Server release. It can be requested <a href="http://releases.ubuntu.com/20.04/">here</a>.</p>
+Specifies the URL to the Ubuntu Server release. It can be requested <a href="http://releases.ubuntu.com/20.04/">here</a>.</p>
 </li>
 <li>
 <p><code>ubuntu_server_checksum</code>:
-Specifies checksum type and value of the Ubuntu Server release and can be requested
+Specifies the checksum type and value of the Ubuntu Server release and can be requested
 <a href="https://releases.ubuntu.com/20.04/SHA256SUMS">here</a>.</p>
 </li>
 </ul>
@@ -666,11 +666,11 @@ Specifies the RKE version. It can be requested <a href="https://github.com/ranch
 </li>
 <li>
 <p><code>rke_url</code>:
-Specifies the url to the RKE release. The version is inserted into the url automatically.</p>
+Specifies the URL to the RKE release. The version is inserted into the URL automatically.</p>
 </li>
 <li>
 <p><code>rke_checksum</code>:
-Specifies the checksum type and value of the RKE release and can be requested from the url
+Specifies the checksum type and value of the RKE release and can be requested from the URL
 <code>https://github.com/rancher/rke/releases/download/{{ rke_version }}/sha256sum.txt</code> where
 <code>{{ rke_version }}</code> has to be replaced by the RKE version (for example
 <a href="https://github.com/rancher/rke/releases/download/v1.1.7/sha256sum.txt">v1.1.7</a>).</p>
